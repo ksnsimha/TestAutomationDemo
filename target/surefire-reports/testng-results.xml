@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-19T15:26:00 AEST" name="TestNg" finished-at="2021-06-19T15:26:31 AEST" duration-ms="31554">
+  <suite started-at="2021-06-19T15:57:15 AEST" name="TestNg" finished-at="2021-06-19T15:57:48 AEST" duration-ms="33136">
     <groups>
     </groups>
-    <test started-at="2021-06-19T15:26:00 AEST" name="Jupiter Toy Application Test" finished-at="2021-06-19T15:26:31 AEST" duration-ms="31554">
+    <test started-at="2021-06-19T15:57:15 AEST" name="Jupiter Toy Application Test" finished-at="2021-06-19T15:57:48 AEST" duration-ms="33136">
       <class name="testPackages.TestCase1">
-        <test-method signature="Test1(java.lang.String)[pri:0, instance:testPackages.TestCase1@41ee392b]" started-at="2021-06-19T15:26:00 AEST" name="Test1" finished-at="2021-06-19T15:26:12 AEST" duration-ms="12479" status="PASS">
+        <test-method signature="Test1(java.lang.String)[pri:0, instance:testPackages.TestCase1@2d7275fc]" started-at="2021-06-19T15:57:15 AEST" name="Test1" finished-at="2021-06-19T15:57:27 AEST" duration-ms="12035" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -15,12 +15,41 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at testPackages.TestCase1.Test1(TestCase1.java:33)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+at java.base/java.lang.Thread.run(Thread.java:831)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test1 -->
       </class> <!-- testPackages.TestCase1 -->
       <class name="testPackages.TestCase2">
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@ca263c2]" started-at="2021-06-19T15:26:00 AEST" name="Test2" finished-at="2021-06-19T15:26:11 AEST" duration-ms="11444" status="PASS">
+        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@5fe94a96]" started-at="2021-06-19T15:57:15 AEST" name="Test2" finished-at="2021-06-19T15:57:28 AEST" duration-ms="13618" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,7 +60,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@ca263c2]" started-at="2021-06-19T15:26:11 AEST" name="Test2" finished-at="2021-06-19T15:26:16 AEST" duration-ms="5328" status="PASS">
+        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@5fe94a96]" started-at="2021-06-19T15:57:28 AEST" name="Test2" finished-at="2021-06-19T15:57:33 AEST" duration-ms="4944" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -42,7 +71,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@ca263c2]" started-at="2021-06-19T15:26:16 AEST" name="Test2" finished-at="2021-06-19T15:26:21 AEST" duration-ms="4708" status="PASS">
+        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@5fe94a96]" started-at="2021-06-19T15:57:33 AEST" name="Test2" finished-at="2021-06-19T15:57:38 AEST" duration-ms="4979" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +82,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@ca263c2]" started-at="2021-06-19T15:26:21 AEST" name="Test2" finished-at="2021-06-19T15:26:26 AEST" duration-ms="4868" status="PASS">
+        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@5fe94a96]" started-at="2021-06-19T15:57:38 AEST" name="Test2" finished-at="2021-06-19T15:57:43 AEST" duration-ms="4849" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -64,7 +93,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@ca263c2]" started-at="2021-06-19T15:26:26 AEST" name="Test2" finished-at="2021-06-19T15:26:31 AEST" duration-ms="5166" status="PASS">
+        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@5fe94a96]" started-at="2021-06-19T15:57:43 AEST" name="Test2" finished-at="2021-06-19T15:57:48 AEST" duration-ms="4711" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,7 +106,7 @@
         </test-method> <!-- Test2 -->
       </class> <!-- testPackages.TestCase2 -->
       <class name="testPackages.TestCase3">
-        <test-method signature="Test3(java.lang.String)[pri:0, instance:testPackages.TestCase3@534df152]" started-at="2021-06-19T15:26:00 AEST" name="Test3" finished-at="2021-06-19T15:26:09 AEST" duration-ms="9835" status="PASS">
+        <test-method signature="Test3(java.lang.String)[pri:0, instance:testPackages.TestCase3@618b19ad]" started-at="2021-06-19T15:57:15 AEST" name="Test3" finished-at="2021-06-19T15:57:25 AEST" duration-ms="9938" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -90,7 +119,7 @@
         </test-method> <!-- Test3 -->
       </class> <!-- testPackages.TestCase3 -->
       <class name="testPackages.TestCase4">
-        <test-method signature="Test4(java.lang.String)[pri:0, instance:testPackages.TestCase4@52e677af]" started-at="2021-06-19T15:26:00 AEST" name="Test4" finished-at="2021-06-19T15:26:10 AEST" duration-ms="10308" status="PASS">
+        <test-method signature="Test4(java.lang.String)[pri:0, instance:testPackages.TestCase4@2d3379b4]" started-at="2021-06-19T15:57:15 AEST" name="Test4" finished-at="2021-06-19T15:57:25 AEST" duration-ms="9884" status="PASS">
           <params>
             <param index="0">
               <value>

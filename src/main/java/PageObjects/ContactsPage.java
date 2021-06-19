@@ -2,6 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 import Common.UIModule;
 
@@ -9,6 +10,12 @@ import Common.UIModule;
 public class ContactsPage extends UIModule {
 	
 	private By FORENAMEFIELD = By.id("forename");
+	private By EMAIlFIELD = By.id("email");
+    private By MESSAGEFILED = By.id("message");
+    private By SUBMITLINK = By.linkText("Submit");
+    private By FORENAMEFIELDERROR = RelativeLocator.with(By.id("forename-err")).toRightOf(FORENAMEFIELD);
+    private By EMAIlFIELDERROR = RelativeLocator.with(By.id("email-err")).toRightOf(EMAIlFIELD);
+    private By MESSAGEFILEDERROR = RelativeLocator.with(By.id("message-err")).toRightOf(MESSAGEFILED);
     public By getFORENAMEFIELD() {
 		return FORENAMEFIELD;
 	}
@@ -64,12 +71,7 @@ public class ContactsPage extends UIModule {
 	public void setMESSAGEFILEDERROR(By mESSAGEFILEDERROR) {
 		MESSAGEFILEDERROR = mESSAGEFILEDERROR;
 	}
-	private By EMAIlFIELD = By.id("email");
-    private By MESSAGEFILED = By.id("message");
-    private By SUBMITLINK = By.linkText("Submit");
-    private By FORENAMEFIELDERROR = By.id("forename-err");
-    private By EMAIlFIELDERROR = By.id("email-err");
-    private By MESSAGEFILEDERROR = By.id("message-err");
+
     
 
 
