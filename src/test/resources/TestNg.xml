@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNg" verbose="1">
+    <parameter name="url" value="http://jupiter.cloud.planittesting.com"/>
+    <test name="Jupiter Toy Application Test">
+        <classes>
+            <class name="TestCase1"/>
+            <class name="TestCase2"/>
+            <class name="TestCase3"/>
+            <class name="TestCase4"/>
+        </classes>
+    </test>
+
+</suite>
