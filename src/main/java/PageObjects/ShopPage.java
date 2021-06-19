@@ -3,6 +3,7 @@ package PageObjects;
 import Common.UIModule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,8 +16,37 @@ public class ShopPage extends UIModule {
 	private By BUYFLUFFYBUNNYLINK = By.xpath(".//h4[contains(text(),'Fluffy Bunny')]/ancestor::li//a");
 	private By BUYSTUFFEDFROGLINK = By.xpath(".//h4[contains(text(),'Stuffed Frog')]/ancestor::li//a");
 	private By BUYVALENTINEBEARLINK = By.xpath(".//h4[contains(text(),'Valentine Bear')]/ancestor::li//a");
+	
+	public By returnByLocatorForPrice(String productName) {
+		By locator= RelativeLocator.with(By.xpath("//span")).toRightOf(By.xpath("//h4[contains(text(),'"+productName+"')]"));
+		return locator;
+	}
+	
+	public By returnByLocatorForBuy(String productName) {
+		By locator= RelativeLocator.with(By.xpath("//a[contains(text(),'Buy']")).toRightOf(By.xpath("//h4[contains(text(),'"+productName+"')]"));
+		return locator;
+	}
 
-	public void waitUntilPageLoads() throws Exception {
+	public void buyProduct(String Product,int number,WebDriver driver) throws Exception {
+		for (int i = 0; i < number; i++) {
+			click(returnByLocatorForBuy(Product),driver);
+		}
+	}
+	
+	public String getPrice(String Product,WebDriver driver) throws Exception {
+		String resultText = null;
+		try {
+			resultText = getText(returnByLocatorForPrice(Product),driver);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return resultText;
+	}
+
+
+	public void waitUntilPageLoads(WebDriver driver) throws Exception {
 		@SuppressWarnings("deprecation")
 		WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
 		webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText("Buy")));
@@ -94,7 +124,7 @@ public class ShopPage extends UIModule {
 
 	public void buyValentineBear(int number,WebDriver driver) throws Exception {
 		for (int i = 0; i < number; i++) {
-			click(getVALENTINEBEARPRICEFIELD(),driver);
+			click(getBUYVALENTINEBEARLINK(),driver);
 		}
 
 	}
@@ -120,7 +150,7 @@ public class ShopPage extends UIModule {
 	public String getValentineBearPrice(WebDriver driver) {
 		String resultText = null;
 		try {
-			resultText = getText(getBUYVALENTINEBEARLINK(),driver);
+			resultText = getText(getVALENTINEBEARPRICEFIELD(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

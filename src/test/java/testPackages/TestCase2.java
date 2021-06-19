@@ -30,12 +30,12 @@ public class TestCase2 extends UIModule {
 			contactsPage.enterEmailField("Test.test@test.com.au",driver);
 			contactsPage.enterMessageField("Test",driver);
 			contactsPage.submit(driver);
-			successPage.waitUntilPageLoads();
+			successPage.waitUntilPageLoads(driver);
 			Assert.assertTrue(verifyPageSourceContains(assertText.getMTSUCCESSPART1(),driver));
 			Assert.assertTrue(verifyPageSourceContains(assertText.getMTSUCCESSPART2(),driver));
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		} finally {
 			closeDriver(driver);
 		}

@@ -26,7 +26,7 @@ public class TestCase3 extends UIModule {
 			navigateUrl(url,driver);
 			homePage.goToShopPage(driver);
 
-			shopPage.waitUntilPageLoads();
+			shopPage.waitUntilPageLoads(driver);
 
 			// Click 2 times on Funny Cow
 			shopPage.buyFunnyCow(2,driver);
@@ -36,14 +36,14 @@ public class TestCase3 extends UIModule {
 
 			// Click on Cart menu
 			homePage.goToCart(driver);
-			int quantityIndex = cartPage.getIndexofQuantity();
+			int quantityIndex = cartPage.getIndexofQuantity(driver);
 
 			// Verify Cart Menu
 			Assert.assertEquals(getValueAttribute(cartPage.getFunnyCowquantity(quantityIndex),driver), "2");
 
 			Assert.assertEquals(getValueAttribute(cartPage.getFluffyBunnyquantity(quantityIndex),driver), "1");
 		} catch (Exception e) {
-
+e.printStackTrace();
 		} finally {
 			closeDriver(driver);
 		}

@@ -3,9 +3,9 @@
     <parameter name="url" value="http://jupiter.cloud.planittesting.com"/>
     <test name="Jupiter Toy Application Test">
         <classes>
-            <class name="testPackages.TestCase1"/>
+       	<!-- 	<class name="testPackages.TestCase1"/>
     		<class name="testPackages.TestCase2"/>
-            <class name="testPackages.TestCase3"/>
+            <class name="testPackages.TestCase3"/>  -->
             <class name="testPackages.TestCase4"/>
         </classes>
     </test>

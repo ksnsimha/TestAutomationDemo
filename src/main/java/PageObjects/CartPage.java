@@ -2,6 +2,7 @@ package PageObjects;
 
 import Common.UIModule;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,7 +28,7 @@ public class CartPage extends UIModule {
 		webDriverWait.until(ExpectedConditions.presenceOfElementLocated(getCHECKOUTBUTTON()));
 	}
 
-	public int getIndexofQuantity() throws Exception {
+	public int getIndexofQuantity(WebDriver driver) throws Exception {
 
 		Thread.sleep(1000);
 		List<WebElement> list = driver.findElements(By.tagName("th"));
@@ -42,7 +43,7 @@ public class CartPage extends UIModule {
 		return quantityIndex;
 	}
 
-	public int getIndexofPrice() throws Exception {
+	public int getIndexofPrice(WebDriver driver) throws Exception {
 
 		Thread.sleep(1000);
 		List<WebElement> list = driver.findElements(By.tagName("th"));
@@ -57,7 +58,7 @@ public class CartPage extends UIModule {
 		return quantityIndex;
 	}
 
-	public int getIndexofSubTotal() throws Exception {
+	public int getIndexofSubTotal(WebDriver driver) throws Exception {
 
 		Thread.sleep(1000);
 		List<WebElement> list = driver.findElements(By.tagName("th"));

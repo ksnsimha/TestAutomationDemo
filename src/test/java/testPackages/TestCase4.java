@@ -26,23 +26,25 @@ public class TestCase4 extends UIModule {
 			
 			
 			homePage.goToShopPage(driver);
-			shopPage.waitUntilPageLoads();
-			shopPage.buyStuffedFrog(2,driver);
-			shopPage.buyFluffyBunny(5,driver);
-			shopPage.buyValentineBear(3,driver);
+			shopPage.waitUntilPageLoads(driver);
+		
+			
+			shopPage.buyProduct("Stuffed Frog", 2, driver);
+			shopPage.buyProduct("Fluffy Bunny", 2, driver);
+			shopPage.buyProduct("Valentine Bear", 2, driver);
 			
 
 			
 			
-			String stuffedFrogPrice = shopPage.getFrogPrice(driver);
-			String fluffyBunnyPrice = shopPage.getFluffyBunnyPrice(driver);
-			String valentineBearPrice = shopPage.getValentineBearPrice(driver);
+			String stuffedFrogPrice = shopPage.getPrice("Stuffed Frog", driver);
+			String fluffyBunnyPrice = shopPage.getPrice("Fluffy Bunny",driver);
+			String valentineBearPrice = shopPage.getPrice("Valentine Bear",driver);
 			
 			
 			homePage.goToCart(driver);
 			
-			int priceIndex = cartPage.getIndexofPrice();
-			int subTotalIndex = cartPage.getIndexofSubTotal();
+			int priceIndex = cartPage.getIndexofPrice(driver);
+			int subTotalIndex = cartPage.getIndexofSubTotal(driver);
 			
 			
 			Assert.assertEquals(getText(cartPage.getStuffedFogIndexValue(priceIndex),driver), stuffedFrogPrice);
@@ -60,7 +62,7 @@ public class TestCase4 extends UIModule {
 			Assert.assertEquals(getText(cartPage.getValentineBearIndexValue(subTotalIndex),driver),
 					cartPage.getActualTotal(3, valentineBearPrice));
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		} finally {
 
 			closeDriver(driver);

@@ -1,96 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-19T16:06:43 AEST" name="TestNg" finished-at="2021-06-19T16:07:14 AEST" duration-ms="30702">
+  <suite started-at="2021-06-19T18:04:18 AEST" name="TestNg" finished-at="2021-06-19T18:05:17 AEST" duration-ms="59340">
     <groups>
     </groups>
-    <test started-at="2021-06-19T16:06:43 AEST" name="Jupiter Toy Application Test" finished-at="2021-06-19T16:07:14 AEST" duration-ms="30702">
-      <class name="testPackages.TestCase1">
-        <test-method signature="Test1(java.lang.String)[pri:0, instance:testPackages.TestCase1@49438269]" started-at="2021-06-19T16:06:43 AEST" name="Test1" finished-at="2021-06-19T16:06:54 AEST" duration-ms="10868" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test1 -->
-      </class> <!-- testPackages.TestCase1 -->
-      <class name="testPackages.TestCase2">
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@6ab778a]" started-at="2021-06-19T16:06:43 AEST" name="Test2" finished-at="2021-06-19T16:06:54 AEST" duration-ms="11174" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@6ab778a]" started-at="2021-06-19T16:06:54 AEST" name="Test2" finished-at="2021-06-19T16:06:59 AEST" duration-ms="5002" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@6ab778a]" started-at="2021-06-19T16:06:59 AEST" name="Test2" finished-at="2021-06-19T16:07:04 AEST" duration-ms="4955" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@6ab778a]" started-at="2021-06-19T16:07:04 AEST" name="Test2" finished-at="2021-06-19T16:07:09 AEST" duration-ms="4809" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test2(java.lang.String)[pri:0, instance:testPackages.TestCase2@6ab778a]" started-at="2021-06-19T16:07:09 AEST" name="Test2" finished-at="2021-06-19T16:07:14 AEST" duration-ms="4714" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-      </class> <!-- testPackages.TestCase2 -->
-      <class name="testPackages.TestCase3">
-        <test-method signature="Test3(java.lang.String)[pri:0, instance:testPackages.TestCase3@5c90e579]" started-at="2021-06-19T16:06:43 AEST" name="Test3" finished-at="2021-06-19T16:06:53 AEST" duration-ms="9614" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://jupiter.cloud.planittesting.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test3 -->
-      </class> <!-- testPackages.TestCase3 -->
+    <test started-at="2021-06-19T18:04:18 AEST" name="Jupiter Toy Application Test" finished-at="2021-06-19T18:05:17 AEST" duration-ms="59340">
       <class name="testPackages.TestCase4">
-        <test-method signature="Test4(java.lang.String)[pri:0, instance:testPackages.TestCase4@58ea606c]" started-at="2021-06-19T16:06:43 AEST" name="Test4" finished-at="2021-06-19T16:06:52 AEST" duration-ms="9208" status="PASS">
+        <test-method signature="Test4(java.lang.String)[pri:0, instance:testPackages.TestCase4@1a04f701]" started-at="2021-06-19T18:04:18 AEST" name="Test4" finished-at="2021-06-19T18:05:16 AEST" duration-ms="57460" status="PASS">
           <params>
             <param index="0">
               <value>
