@@ -16,41 +16,6 @@ public class ShopPage extends UIModule {
 	private By BUYFLUFFYBUNNYLINK = By.xpath(".//h4[contains(text(),'Fluffy Bunny')]/ancestor::li//a");
 	private By BUYSTUFFEDFROGLINK = By.xpath(".//h4[contains(text(),'Stuffed Frog')]/ancestor::li//a");
 	private By BUYVALENTINEBEARLINK = By.xpath(".//h4[contains(text(),'Valentine Bear')]/ancestor::li//a");
-	
-	public By returnByLocatorForPrice(String productName) {
-		By locator= RelativeLocator.with(By.xpath("//span")).toRightOf(By.xpath("//h4[contains(text(),'"+productName+"')]"));
-		return locator;
-	}
-	
-	public By returnByLocatorForBuy(String productName) {
-		By locator= RelativeLocator.with(By.xpath("//a[contains(text(),'Buy']")).toRightOf(By.xpath("//h4[contains(text(),'"+productName+"')]"));
-		return locator;
-	}
-
-	public void buyProduct(String Product,int number,WebDriver driver) throws Exception {
-		for (int i = 0; i < number; i++) {
-			click(returnByLocatorForBuy(Product),driver);
-		}
-	}
-	
-	public String getPrice(String Product,WebDriver driver) throws Exception {
-		String resultText = null;
-		try {
-			resultText = getText(returnByLocatorForPrice(Product),driver);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-		}
-		return resultText;
-	}
-
-
-	public void waitUntilPageLoads(WebDriver driver) throws Exception {
-		@SuppressWarnings("deprecation")
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
-		webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText("Buy")));
-	}
 
 	public By getSTUFFEDFROGPRICEFIELD() {
 		return STUFFEDFROGPRICEFIELD;
@@ -108,37 +73,31 @@ public class ShopPage extends UIModule {
 		BUYVALENTINEBEARLINK = bUYVALENTINEBEARLINK;
 	}
 
-	public void buyFluffyBunny(int number,WebDriver driver) throws Exception {
-		for (int i = 0; i < number; i++) {
-			click(getBUYFLUFFYBUNNYLINK(),driver);
-		}
+	public By returnByLocatorForPrice(String productName) {
+		By anchor = By.xpath("//h4[contains(text(),'" + productName + "')]");
+
+		By locator = RelativeLocator.with(By.tagName("span")).below(anchor);
+		return locator;
+	}
+
+	public By returnByLocatorForBuy(String productName) {
+		By anchor = By.xpath("//h4[contains(text(),'" + productName + "')]");
+		By locator = RelativeLocator.with(By.xpath("//a[contains(text(),'Buy')]")).below(anchor);
+		return locator;
 
 	}
 
-	public void buyStuffedFrog(int number,WebDriver driver ) throws Exception {
+	public void buyProduct(String Product, int number, WebDriver driver) throws Exception {
+
 		for (int i = 0; i < number; i++) {
-			click(getBUYSTUFFEDFROGLINK(),driver);
-		}
-
-	}
-
-	public void buyValentineBear(int number,WebDriver driver) throws Exception {
-		for (int i = 0; i < number; i++) {
-			click(getBUYVALENTINEBEARLINK(),driver);
-		}
-
-	}
-
-	public void buyFunnyCow(int number,WebDriver driver) throws Exception {
-		for (int i = 0; i < number; i++) {
-			click(getBUYFUNNYCOWLINK(),driver);
+			click(returnByLocatorForBuy(Product), driver);
 		}
 	}
 
-	public String getFrogPrice(WebDriver driver) {
+	public String getPrice(String Product, WebDriver driver) throws Exception {
 		String resultText = null;
 		try {
-			resultText = getText(getSTUFFEDFROGPRICEFIELD(),driver);
+			resultText = getText(returnByLocatorForPrice(Product), driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -147,28 +106,10 @@ public class ShopPage extends UIModule {
 		return resultText;
 	}
 
-	public String getValentineBearPrice(WebDriver driver) {
-		String resultText = null;
-		try {
-			resultText = getText(getVALENTINEBEARPRICEFIELD(),driver);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-		}
-		return resultText;
-	}
-
-	public String getFluffyBunnyPrice(WebDriver driver) {
-		String resultText = null;
-		try {
-			resultText = getText(getFLUFFYBUNNYPRICEFIELD(),driver);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-		}
-		return resultText;
+	public void waitUntilPageLoads(WebDriver driver) throws Exception {
+		@SuppressWarnings("deprecation")
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
+		webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText("Buy")));
 	}
 
 }

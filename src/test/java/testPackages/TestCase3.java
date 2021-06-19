@@ -3,6 +3,7 @@ package testPackages;
 import Common.UIModule;
 import PageObjects.CartPage;
 import PageObjects.HomePage;
+import PageObjects.Products;
 import PageObjects.ShopPage;
 
 import org.openqa.selenium.WebDriver;
@@ -22,26 +23,22 @@ public class TestCase3 extends UIModule {
 
 			driver=initialiseDriver();
 
-			// From Home Page Go to shop page
 			navigateUrl(url,driver);
 			homePage.goToShopPage(driver);
 
+			shopPage.buyProduct(Products.FunnyCow, 2, driver);
+			shopPage.buyProduct(Products.FluffuBunny, 1, driver);
+
 			shopPage.waitUntilPageLoads(driver);
 
-			// Click 2 times on Funny Cow
-			shopPage.buyFunnyCow(2,driver);
 
-			// click 1 time on fluffy bunny
-			shopPage.buyFluffyBunny(1,driver);
-
-			// Click on Cart menu
 			homePage.goToCart(driver);
-			int quantityIndex = cartPage.getIndexofQuantity(driver);
+		
 
-			// Verify Cart Menu
-			Assert.assertEquals(getValueAttribute(cartPage.getFunnyCowquantity(quantityIndex),driver), "2");
-
-			Assert.assertEquals(getValueAttribute(cartPage.getFluffyBunnyquantity(quantityIndex),driver), "1");
+			String actual =cartPage.getProductQuantity(Products.FunnyCow,driver);
+			Assert.assertEquals(actual, "2");
+			actual =cartPage.getProductQuantity(Products.FluffuBunny,driver);
+			Assert.assertEquals(actual, "1");
 		} catch (Exception e) {
 e.printStackTrace();
 		} finally {

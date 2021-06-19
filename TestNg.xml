@@ -1,13 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestNg" verbose="1" parallel="classes" thread-count="8" >
-    <parameter name="url" value="http://jupiter.cloud.planittesting.com"/>
-    <test name="Jupiter Toy Application Test">
-        <classes>
-       	<!-- 	<class name="testPackages.TestCase1"/>
-    		<class name="testPackages.TestCase2"/>
-            <class name="testPackages.TestCase3"/>  -->
-            <class name="testPackages.TestCase4"/>
-        </classes>
-    </test>
+<suite name="TestNg" verbose="1" parallel="classes"
+	thread-count="8">
+	<parameter name="url"
+		value="http://jupiter.cloud.planittesting.com" />
+	<test name="Jupiter Toy Application Test">
+		<classes>
+			<class name="testPackages.TestCase1" />
+			<class name="testPackages.TestCase2" />
+			<class name="testPackages.TestCase3" />
+			<class name="testPackages.TestCase4" />
+		</classes>
+	</test>
 
 </suite>

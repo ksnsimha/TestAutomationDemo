@@ -4,11 +4,11 @@
   <parameter name="url" value="http://jupiter.cloud.planittesting.com"/>
   <test thread-count="8" parallel="classes" name="Jupiter Toy Application Test(failed)">
     <classes>
-      <class name="testPackages.TestCase1">
+      <class name="testPackages.TestCase3">
         <methods>
-          <include name="Test1" invocation-numbers="0"/>
+          <include name="Test3" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testPackages.TestCase1 -->
+      </class> <!-- testPackages.TestCase3 -->
     </classes>
   </test> <!-- Jupiter Toy Application Test(failed) -->
 </suite> <!-- Failed suite [TestNg] -->
