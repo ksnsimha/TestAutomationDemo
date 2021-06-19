@@ -2,6 +2,7 @@ package PageObjects;
 
 import Common.UIModule;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -77,37 +78,37 @@ public class ShopPage extends UIModule {
 		BUYVALENTINEBEARLINK = bUYVALENTINEBEARLINK;
 	}
 
-	public void buyFluffyBunny(int number) throws Exception {
+	public void buyFluffyBunny(int number,WebDriver driver) throws Exception {
 		for (int i = 0; i < number; i++) {
-			click(getBUYFLUFFYBUNNYLINK());
+			click(getBUYFLUFFYBUNNYLINK(),driver);
 		}
 
 	}
 
-	public void buyStuffedFrog(int number) throws Exception {
+	public void buyStuffedFrog(int number,WebDriver driver ) throws Exception {
 		for (int i = 0; i < number; i++) {
-			click(getBUYSTUFFEDFROGLINK());
+			click(getBUYSTUFFEDFROGLINK(),driver);
 		}
 
 	}
 
-	public void buyValentineBear(int number) throws Exception {
+	public void buyValentineBear(int number,WebDriver driver) throws Exception {
 		for (int i = 0; i < number; i++) {
-			click(getVALENTINEBEARPRICEFIELD());
+			click(getVALENTINEBEARPRICEFIELD(),driver);
 		}
 
 	}
 
-	public void buyFunnyCow(int number) throws Exception {
+	public void buyFunnyCow(int number,WebDriver driver) throws Exception {
 		for (int i = 0; i < number; i++) {
-			click(getBUYFUNNYCOWLINK());
+			click(getBUYFUNNYCOWLINK(),driver);
 		}
 	}
 
-	public String getFrogPrice() {
+	public String getFrogPrice(WebDriver driver) {
 		String resultText = null;
 		try {
-			resultText = getText(getSTUFFEDFROGPRICEFIELD());
+			resultText = getText(getSTUFFEDFROGPRICEFIELD(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,10 +117,10 @@ public class ShopPage extends UIModule {
 		return resultText;
 	}
 
-	public String getValentineBearPrice() {
+	public String getValentineBearPrice(WebDriver driver) {
 		String resultText = null;
 		try {
-			resultText = getText(getBUYVALENTINEBEARLINK());
+			resultText = getText(getBUYVALENTINEBEARLINK(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -128,10 +129,10 @@ public class ShopPage extends UIModule {
 		return resultText;
 	}
 
-	public String getFluffyBunnyPrice() {
+	public String getFluffyBunnyPrice(WebDriver driver) {
 		String resultText = null;
 		try {
-			resultText = getText(getFLUFFYBUNNYPRICEFIELD());
+			resultText = getText(getFLUFFYBUNNYPRICEFIELD(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,7 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.WebDriver;
 
 import Common.UIModule;
 
@@ -74,40 +74,40 @@ public class ContactsPage extends UIModule {
 
 
   
-    public void submit() throws Exception {
-        click(getSUBMITLINK());
+    public void submit( WebDriver driver) throws Exception {
+        click(getSUBMITLINK(),driver);
     }
 
 
     
-    public void enterForeNameField(String text) {
+    public void enterForeNameField(String text, WebDriver driver) {
     	 try {
-			enterText(getFORENAMEFIELD(), text);
+			enterText(getFORENAMEFIELD(), text,driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
-    public void enterEmailField(String text) {
+    public void enterEmailField(String text, WebDriver driver) {
    	 try {
-			enterText(getEMAIlFIELD(), text);
+			enterText(getEMAIlFIELD(), text,driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
    }
-    public void enterMessageField(String text) {
+    public void enterMessageField(String text, WebDriver driver) {
    	 try {
-			enterText(getMESSAGEFILED(), text);
+			enterText(getMESSAGEFILED(), text,driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
    }
-    public String getForeNameFieldErrorText() {
+    public String getForeNameFieldErrorText( WebDriver driver) {
     	String resultText=null;
     	try {
-    		resultText= getText(getFORENAMEFIELD());
+    		resultText= getText(getFORENAMEFIELDERROR(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -117,10 +117,10 @@ public class ContactsPage extends UIModule {
 		
     }
     
-    public String getEmailFieldErrorText() {
+    public String getEmailFieldErrorText( WebDriver driver) {
     	String resultText=null;
     	try {
-    		resultText= getText(getEMAIlFIELD());
+    		resultText= getText(getEMAIlFIELDERROR(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -128,10 +128,10 @@ public class ContactsPage extends UIModule {
 		}
     	return resultText;
     }
-    public String getMessageFieldErrorText() {
+    public String getMessageFieldErrorText( WebDriver driver) {
     	String resultText=null;
     	try {
-    		resultText= getText(getMESSAGEFILED());
+    		resultText= getText(getMESSAGEFILEDERROR(),driver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

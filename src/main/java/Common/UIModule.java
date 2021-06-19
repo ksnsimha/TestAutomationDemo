@@ -9,42 +9,42 @@ import org.openqa.selenium.support.ui.Wait;
 import java.time.Duration;
 
 public class UIModule {
-    public static WebDriver driver;
+    public  WebDriver driver;
 
     public WebDriver initialiseDriver() throws Exception {
 
 
-        System.setProperty("webdriver.chrome.driver", "/Users/nehafatima/PlanItTest/src/main/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         driver = new ChromeDriver();
         return driver;
     }
 
-    public void navigateUrl(String url) throws Exception {
+    public void navigateUrl(String url,WebDriver driver) throws Exception {
         driver.navigate().to(url);
     }
 
-    public void click(By by) throws Exception {
-        fluentWait(by, 5).click();
+    public void click(By by, WebDriver driver) throws Exception {
+        fluentWait(by, 10,driver).click();
     }
 
-    public void enterText(By by, String text) throws Exception {
-        fluentWait(by, 5).clear();
-        fluentWait(by, 5).sendKeys(text);
+    public void enterText(By by, String text, WebDriver driver) throws Exception {
+        fluentWait(by, 5,driver).clear();
+        fluentWait(by, 5,driver).sendKeys(text);
     }
 
-    public String getText(By by) throws Exception {
-        return fluentWait(by, 15).getText();
+    public String getText(By by, WebDriver driver) throws Exception {
+        return fluentWait(by, 15,driver).getText();
     }
 
-    public String getValueAttribute(By by) throws Exception {
-        return fluentWait(by, 15).getAttribute("value");
+    public String getValueAttribute(By by, WebDriver driver) throws Exception {
+        return fluentWait(by, 15,driver).getAttribute("value");
     }
 
-    public boolean verifyPageSourceContains(String text) throws Exception {
+    public boolean verifyPageSourceContains(String text,WebDriver driver) throws Exception {
         return driver.getPageSource().contains(text);
     }
 
-    public WebElement fluentWait(By by, int time) throws Exception {
+    public WebElement fluentWait(By by, int time,WebDriver driver) throws Exception {
         WebElement currentElement = null;
         Wait<WebDriver> wait = null;
         try {
@@ -61,7 +61,7 @@ public class UIModule {
 
     }
 
-    public boolean checkElementDoesNotExist(By by) throws Exception {
+    public boolean checkElementDoesNotExist(By by,WebDriver driver) throws Exception {
         try {
             driver.findElement(by);
             return false;
@@ -70,7 +70,7 @@ public class UIModule {
         }
     }
 
-    public void closeDriver() {
+    public void closeDriver(WebDriver driver) {
         driver.quit();
     }
 

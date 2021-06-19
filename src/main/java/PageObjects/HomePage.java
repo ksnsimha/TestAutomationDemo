@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import Common.UIModule;
 
@@ -10,15 +11,15 @@ public class HomePage extends UIModule {
 	    private By CARTLINK = By.partialLinkText("Cart");
 	
 
-    public void goToConatactsPage() throws Exception {
-        click(CONTACTSLINK);
+    public void goToConatactsPage(WebDriver driver) throws Exception {
+        click(CONTACTSLINK,driver);
     }
 
-    public void goToShopPage() throws Exception {
-        click(SHOPLINK);
+    public void goToShopPage(WebDriver driver) throws Exception {
+        click(SHOPLINK,driver);
     }
 
-    public void goToCart() throws Exception {
-        click(CARTLINK);
+    public void goToCart(WebDriver driver) throws Exception {
+        click(CARTLINK,driver);
     }
 }
